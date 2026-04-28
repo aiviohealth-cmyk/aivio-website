@@ -13,6 +13,9 @@ export default function Navigation() {
           <Link href="/features" className="text-sm text-gray-600 hover:text-brand-600 transition-colors">
             Features
           </Link>
+          <Link href="/features/voice-dokumentation" className="text-sm text-gray-600 hover:text-brand-600 transition-colors">
+            Voice-Doku
+          </Link>
           <Link href="/pricing" className="text-sm text-gray-600 hover:text-brand-600 transition-colors">
             Preise
           </Link>
