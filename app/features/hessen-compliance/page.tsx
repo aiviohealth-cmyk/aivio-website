@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ComplianceRoiTable from "@/components/ComplianceRoiTable";
 import HessenCtaButtons from "@/components/HessenCtaButtons";
+import CompliancePruefungDiagram from "@/components/CompliancePruefungDiagram";
 
 export const metadata: Metadata = {
   title: "Hessen SGB XI/V-Compliance — Aivio Health",
@@ -33,29 +34,6 @@ const problems = [
   },
 ];
 
-const steps = [
-  {
-    step: "01",
-    icon: "🔍",
-    title: "Prüfen",
-    description:
-      "Ihre Dokumentation wird automatisch auf Hessen-spezifische Leistungskomplexe und SGB XI/V-Anforderungen geprüft – in Echtzeit, ohne manuellen Aufwand.",
-  },
-  {
-    step: "02",
-    icon: "✅",
-    title: "Validieren",
-    description:
-      "Die Compliance Engine gleicht Einträge mit den aktuellen Hessen-Rahmenverträgen ab und markiert Lücken oder Risiken zur Überprüfung.",
-  },
-  {
-    step: "03",
-    icon: "📋",
-    title: "Reporting",
-    description:
-      "MDK-fertiger Compliance-Bericht wird automatisch generiert – vollständig, nachvollziehbar, revisionssicher.",
-  },
-];
 
 const faqs = [
   {
@@ -141,23 +119,7 @@ export default function HessenCompliancePage() {
               Die Compliance Engine übernimmt die Prüflast – Sie behalten die Kontrolle.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 relative">
-            <div className="hidden md:block absolute top-12 left-1/3 right-1/3 h-0.5 bg-brand-100" />
-            {steps.map((s, i) => (
-              <div key={i} className="text-center relative">
-                <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-brand-50 border-2 border-brand-200 text-4xl mb-6 relative z-10">
-                  {s.icon}
-                </div>
-                <div className="text-xs font-bold text-brand-500 tracking-widest mb-2">
-                  SCHRITT {s.step}
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{s.title}</h3>
-                <p className="text-gray-500 leading-relaxed text-sm max-w-xs mx-auto">
-                  {s.description}
-                </p>
-              </div>
-            ))}
-          </div>
+          <CompliancePruefungDiagram />
         </div>
       </section>
 
